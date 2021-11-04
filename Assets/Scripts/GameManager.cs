@@ -26,15 +26,21 @@ public class GameManager : MonoBehaviour {
     public void GameOver()
     {
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        StartCoroutine(RestartGame(playerHealth));
+		RestartGame(playerHealth);
+        //StartCoroutine(RestartGame(playerHealth));
     }
 
-    //Restarts Players health and position with a .5 second delay
-    IEnumerator RestartGame(PlayerHealth playerHealth)
-    {
-        yield return new WaitForSeconds(.5f);
-        playerHealth.HealDamage(playerHealth.maxHealth);
-        player.transform.position = SpawnPosition.position;
+	//Restarts Players health and position with a .5 second delay
+	//IEnumerator RestartGame(PlayerHealth playerHealth)
+	//{
+	//    yield return new WaitForSeconds(.5f);
+	//    playerHealth.HealDamage(playerHealth.maxHealth);
+	//    player.transform.position = SpawnPosition.position;
 
-    }
+	//}
+	void RestartGame(PlayerHealth playerHealth) {
+		playerHealth.HealDamage(playerHealth.maxHealth);
+		player.transform.position = SpawnPosition.position;
+
+	}
 }
