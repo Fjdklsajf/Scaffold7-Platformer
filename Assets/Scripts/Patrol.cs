@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Patrol : MonoBehaviour {
 
@@ -40,10 +41,11 @@ public class Patrol : MonoBehaviour {
     private void Flip()
     {
         Vector2 localScale = patrollingGameObject.transform.localScale;
+        float xScale = Math.Abs(localScale.x);
         if (patrollingGameObject.transform.position.x - patrolLocations[nextPatrolLocation].position.x > 0)
-            localScale.x = 1;
+            localScale.x = xScale;
         else
-            localScale.x = -1;
+            localScale.x = -xScale;
         patrollingGameObject.transform.localScale = localScale;
     }
 }
