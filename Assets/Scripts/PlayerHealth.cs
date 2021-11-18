@@ -17,8 +17,10 @@ public class PlayerHealth : MonoBehaviour {
     public float currentHealth;
     public Image healthBar; //UI Bar
     public GameManager gameManager;
+    public int deathCount = 0;
     private SpriteRenderer playerSprite;
     private CharacterController2D characterController2D;
+
 
     void Start () {
         currentHealth = maxHealth; //At start of scene, player gets max health

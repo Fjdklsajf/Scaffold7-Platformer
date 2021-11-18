@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
     {
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
 		RestartGame(playerHealth);
+		playerHealth.deathCount++;
         //StartCoroutine(RestartGame(playerHealth));
     }
 
